@@ -1,11 +1,14 @@
 package calculadora.operaciones;
 
-public class Resta implements Operacion{
+public class Resta implements Operacion {
 
     @Override
     public double calcular(double... parametros) {
 
+        double primerTermino = parametros[0];
+        double segundoTermino = parametros[1];
 
-        return 0.0;
+        return primerTermino - segundoTermino;
     }
+
 }
