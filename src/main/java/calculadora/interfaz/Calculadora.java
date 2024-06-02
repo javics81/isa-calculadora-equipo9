@@ -47,21 +47,21 @@ public class Calculadora extends JFrame implements ActionListener {
                 "1", "2", "3", "+", "-",
                 "4", "5", "6", "*", "/",
                 "7", "8", "9", "√", "e^",
-                "C", "0", ".", "="
+                "C", "0", ".", "+/-", "="
         };
 
         int[] gridx = {
                 0, 1, 2, 3, 4,
                 0, 1, 2, 3, 4,
                 0, 1, 2, 3, 4,
-                0, 1, 2, 3
+                0, 1, 2, 3, 4
         };
 
         int[] gridy = {
                 0, 0, 0, 0, 0,
                 1, 1, 1, 1, 1,
                 2, 2, 2, 2, 2,
-                3, 3, 3, 3
+                3, 3, 3, 3, 3
         };
 
         for (int i = 0; i < buttons.length; i++) {
@@ -119,6 +119,10 @@ public class Calculadora extends JFrame implements ActionListener {
                     num1 = Double.parseDouble(display.getText());
                     display.setText("");
                     operator = command;
+                    break;
+                case "+/-": // Manejo del botón "+/-"
+                    double number = Double.parseDouble(display.getText());
+                    display.setText(String.valueOf(-number));
                     break;
                 default:
                     display.setText(display.getText() + command);
